@@ -1,0 +1,436 @@
+/* Reset and Base Styles */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+:root {
+    --primary-burgundy: #722F37;
+    --deep-rose: #8B3A3A;
+    --rose-gold: #E8B4B8;
+    --gold-accent: #FFD700;
+    --soft-gold: #FFF8DC;
+    --cream: #FFF5F5;
+    --text-dark: #2C1810;
+    --text-light: #FFFFFF;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: url('Val.jpg') center center/cover no-repeat fixed;
+    color: var(--text-light);
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(114, 47, 55, 0.7) 0%, rgba(139, 58, 58, 0.7) 100%);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Floating Hearts Background */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.7;
+    animation: float-up 8s infinite ease-in-out;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    90% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+}
+
+.hero-content {
+    text-align: center;
+    animation: fadeInUp 2s ease-out;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: var(--soft-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--gold-accent), var(--soft-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--rose-gold);
+    margin-bottom: 3rem;
+}
+
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
+
+.heart-pulse {
+    font-size: 2rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section Styles */
+section {
+    padding: 80px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--gold-accent);
+    font-weight: 700;
+}
+
+/* Love Letter Section */
+.love-letter {
+    background: rgba(255, 245, 245, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.letter-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.letter-paper {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--soft-gold) 100%);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--gold-accent) 0%, transparent 70%);
+    opacity: 0.1;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.letter-content {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+.letter-content p {
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: typewriter-reveal 0.5s ease-out forwards;
+}
+
+.letter-content p:nth-child(1) { animation-delay: 0.5s; }
+.letter-content p:nth-child(2) { animation-delay: 1s; }
+.letter-content p:nth-child(3) { animation-delay: 1.5s; }
+.letter-content p:nth-child(4) { animation-delay: 2s; }
+.letter-content p:nth-child(5) { animation-delay: 2.5s; }
+.letter-content p:nth-child(6) { animation-delay: 3s; }
+.letter-content p:nth-child(7) { animation-delay: 3.5s; }
+
+@keyframes typewriter-reveal {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--primary-burgundy);
+    text-align: right;
+}
+
+/* Reasons Section */
+.reasons {
+    background: rgba(114, 47, 55, 0.3);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.love-card {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(232, 180, 184, 0.1) 100%);
+    border: 2px solid var(--rose-gold);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.love-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3);
+    border-color: var(--gold-accent);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.love-card:nth-child(even) .card-icon {
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.love-card h3 {
+    font-size: 1.5rem;
+    color: var(--gold-accent);
+    margin-bottom: 1rem;
+}
+
+.love-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Final CTA Section */
+.final-cta {
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 3.5rem;
+    color: var(--gold-accent);
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+.cta-subtitle {
+    font-size: 1.3rem;
+    color: var(--rose-gold);
+    margin-bottom: 2rem;
+}
+
+.heartbeat-container {
+    margin: 2rem 0;
+}
+
+.heartbeat {
+    font-size: 4rem;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    45% { transform: scale(1); }
+    60% { transform: scale(1.15); }
+    80% { transform: scale(1); }
+}
+
+.cta-button {
+    background: linear-gradient(45deg, var(--gold-accent), var(--soft-gold));
+    color: var(--primary-burgundy);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 215, 0, 0.5);
+}
+
+/* Footer */
+.footer {
+    background: rgba(44, 24, 16, 0.3);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--rose-gold);
+}
+
+.footer p {
+    color: var(--rose-gold);
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-name {
+        font-size: 3rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .cta-title {
+        font-size: 2.5rem;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .letter-paper {
+        padding: 2rem;
+    }
+    
+    .letter-content {
+        font-size: 1rem;
+    }
+}
