@@ -129,7 +129,7 @@ class CTAInteraction {
         }
 
         // Change button text
-        this.button.textContent = 'I Love You! 💕';
+        this.button.textContent = 'I Love You, Sister! 💕';
         this.button.style.background = 'linear-gradient(45deg, #ff6b6b, #ff8787)';
         
         // Create floating message
@@ -177,7 +177,7 @@ class CTAInteraction {
 
     createFloatingMessage() {
         const message = document.createElement('div');
-        message.textContent = 'You are my everything! 🌹';
+        message.textContent = 'You are the best sister ever! 🌹';
         message.style.cssText = `
             position: fixed;
             top: 50%;

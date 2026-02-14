@@ -1,6 +1,6 @@
-# Valentine's Day for Riri 💕
+# Valentine's Day for Lil Rose 💕
 
-A romantic, interactive Valentine's Day experience built with pure HTML, CSS, and JavaScript.
+A special Valentine's Day message for my sister built with pure HTML, CSS, and JavaScript.
 
 ## Features
 
@@ -51,4 +51,4 @@ A romantic, interactive Valentine's Day experience built with pure HTML, CSS, an
 - Adjust animation speeds in CSS keyframes
 - Add new floating heart emojis in `script.js`
 
-Made with ❤️ for Riri
+Made with ❤️ for Lil Rose
