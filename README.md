@@ -1,4 +1,4 @@
-# Valentine's Day for Yaa Jessy 💕
+# Valentine's Day for Riri 💕
 
 A romantic, interactive Valentine's Day experience built with pure HTML, CSS, and JavaScript.
 
@@ -51,4 +51,4 @@ A romantic, interactive Valentine's Day experience built with pure HTML, CSS, an
 - Adjust animation speeds in CSS keyframes
 - Add new floating heart emojis in `script.js`
 
-Made with ❤️ for Yaa Jessy
+Made with ❤️ for Riri
