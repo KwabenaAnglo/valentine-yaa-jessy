@@ -45,12 +45,21 @@ ul, ol {
 body {
     font-family: 'Playfair Display', serif;
     background: url('Val.jpg') center center/cover no-repeat fixed;
+    background-attachment: fixed;
     color: var(--text-light);
     overflow-x: hidden;
     position: relative;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        background-position: center top;
+    }
 }
 
 body::before {
@@ -88,6 +97,20 @@ body::before {
     font-size: 20px;
     opacity: 0.7;
     animation: float-up 8s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .floating-heart {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-heart {
+        font-size: 14px;
+    }
 }
 
 @keyframes float-up {
@@ -407,30 +430,122 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-name {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
     }
     
     .cta-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+    
+    .cta-subtitle {
+        font-size: 1rem;
     }
     
     .cards-container {
         grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .love-card {
+        padding: 1.5rem;
+    }
+    
+    .love-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .love-card p {
+        font-size: 0.9rem;
     }
     
     .letter-paper {
-        padding: 2rem;
+        padding: 1.5rem;
+        margin: 0 1rem;
     }
     
     .letter-content {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .letter-content p {
+        margin-bottom: 1rem;
+    }
+    
+    .signature {
+        font-size: 1.2rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    section {
+        padding: 4rem 0;
+    }
+    
+    .heartbeat {
+        font-size: 3rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 1.5rem;
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .cta-title {
+        font-size: 1.8rem;
+    }
+    
+    .love-card {
+        padding: 1rem;
+    }
+    
+    .letter-paper {
+        padding: 1rem;
+    }
+    
+    .letter-content {
+        font-size: 0.9rem;
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 3rem 0;
     }
 }
